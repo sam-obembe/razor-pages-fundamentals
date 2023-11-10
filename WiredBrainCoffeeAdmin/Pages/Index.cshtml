@@ -8,9 +8,27 @@
     <h1 class="h2">Welcome to Wired Brain Coffee!</h1>
     <hr />
     <div class="row">
+
         <div class="col-md-6">
-            
+            <div class="card">
+                <div class="card-header">
+                    The basics
+                </div>
+                <div class="card-body">
+                    <p>Hello, today is @DateTime.Today.Date.ToString("MM/dd/yyyy") </p>
+                    @{
+                        var temperature = 50;
+                    }
+                    <p>The current temperature is @temperature degrees</p>
+
+                    @if (temperature < 60)
+                    {
+                        <p>We recommend a coat until the temperature rises by @(60 - temperature) degrees</p>
+                    }
+                </div>
+            </div>
         </div>
+
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
