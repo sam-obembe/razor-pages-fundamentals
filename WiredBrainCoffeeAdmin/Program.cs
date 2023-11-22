@@ -6,6 +6,7 @@ var connectionString = builder.Configuration.GetConnectionString("WiredBrain") ?
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<WiredContext>(options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 

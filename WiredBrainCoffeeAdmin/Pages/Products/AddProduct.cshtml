@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
 
             <!-- Renders validation summary for form input -->
             <div asp-validation-summary="All"></div>
@@ -16,6 +16,8 @@
             <div class="mb-3">
                 <label asp-for="NewProduct.Name">Name</label>
                 <input asp-for="NewProduct.Name" class="form-control" />
+
+                <!--renders validation error here-->
                 <span asp-validation-for="NewProduct.Name"></span>
             </div>
 
@@ -44,6 +46,12 @@
                     <option value="Beverage">Beverage</option>
                     <option value="Snack">Snack</option>
                 </select>
+
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="NewProduct.Upload">Price</label>
+                <input asp-for="NewProduct.Upload" class="form-control" />
 
             </div>
 
