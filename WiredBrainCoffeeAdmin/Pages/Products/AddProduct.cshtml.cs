@@ -18,9 +18,16 @@ public class AddProductModel : PageModel
 
     public void OnGet() { }
 
-    public void OnPost()
+    public IActionResult OnPost()
     {
         //save product to db
-        _logger.LogInformation(NewProduct.Name);
+        if (ModelState.IsValid)
+        {
+            _logger.LogInformation(NewProduct.Name);
+            return RedirectToPage("ViewAllProducts");
+        }
+
+        return Page();
+
     }
 }
